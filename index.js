@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+var heroku = process.env.PORT;
 const bodyParser = require('body-parser');
 var path = require('path');
 var nodemailer = require('nodemailer');
@@ -19,7 +20,7 @@ var transporter = nodemailer.createTransport({
 app.use(express.static(path.join(__dirname, 'HTML')));
 
 
-app.listen(port, () => {
+app.listen(heroku || port), () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
