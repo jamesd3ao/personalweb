@@ -20,7 +20,7 @@ var transporter = nodemailer.createTransport({
 app.use(express.static(path.join(__dirname, 'HTML')));
 
 
-app.listen(heroku || port), () => {
+app.listen((heroku || port), () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
